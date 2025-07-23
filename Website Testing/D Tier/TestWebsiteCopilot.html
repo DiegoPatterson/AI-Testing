@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name • Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --font-primary: 'Work Sans', sans-serif;
+      --clr-bg: #ffffff;
+      --clr-text: #222222;
+      --clr-accent: #ff6b6b;
+      --transition: 0.3s ease;
+    }
+    [data-theme='dark'] {
+      --clr-bg: #121212;
+      --clr-text: #ececec;
+      --clr-accent: #f06795;
+    }
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      transition: color var(--transition), background var(--transition);
+    }
+    body {
+      font-family: var(--font-primary);
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      line-height: 1.6;
+    }
+    header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: var(--clr-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    header .container {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-weight: 600; font-size: 1.5rem;
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+    nav ul {
+      display: flex; gap: 1.5rem;
+    }
+    nav a {
+      color: var(--clr-text);
+      text-decoration: none;
+      position: relative;
+    }
+    nav a::after {
+      content: ''; height: 2px; width: 0;
+      background: var(--clr-accent);
+      position: absolute; bottom: -4px; left: 0;
+      transition: width var(--transition);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    #nav-toggle, #theme-toggle {
+      background: none; border: none;
+      font-size: 1.2rem; cursor: pointer;
+      margin-left: 1rem;
+    }
+    #nav-toggle { display: none; }
+    main {
+      padding-top: 80px;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px; margin: auto;
+      opacity: 0; transform: translateY(20px);
+    }
+    section h1 {
+      margin-bottom: 1rem;
+      color: var(--clr-accent);
+    }
+    .grid, .skills-grid {
+      display: grid; gap: 2rem;
+    }
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .card {
+      background: var(--clr-bg);
+      border: 1px solid #ddd; border-radius: 8px;
+      padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    @media (max-width: 768px) {
+      #nav-toggle { display: block; }
+      nav {
+        position: absolute; top: 100%; left: 0;
+        width: 100%; background: var(--clr-bg);
+        overflow: hidden; max-height: 0;
+        transition: max-height var(--transition);
+      }
+      nav.open { max-height: 300px; }
+      nav ul { flex-direction: column; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="#" class="logo">YourName</a>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#ai">AI Tinkering</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+      <button id="nav-toggle" aria-label="Toggle Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="reveal">
+      <h1>About Me</h1>
+      <p>Introduce yourself in 2–3 sentences. Highlight your passion, background, or mission.</p>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h1>Projects</h1>
+      <div class="grid">
+        <div class="card">
+          <h2>Project One</h2>
+          <p>Short description, tech stack, live link.</p>
+        </div>
+        <div class="card">
+          <h2>Project Two</h2>
+          <p>Short description, tech stack, live link.</p>
+        </div>
+        <!-- Add more project cards here -->
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <h1>Job Experience</h1>
+      <ul>
+        <li>
+          <h2>Role • Company</h2>
+          <span>MM/YYYY – Present</span>
+          <p>Key achievements and responsibilities in concise bullet points.</p>
+        </li>
+        <!-- Add more experiences here -->
+      </ul>
+    </section>
+
+    <section id="ai" class="reveal">
+      <h1>AI Tinkering</h1>
+      <p>Outline your experiments with models, datasets, or custom tools. Link to demos or repos.</p>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h1>Skills</h1>
+      <div class="skills-grid">
+        <div>JavaScript</div>
+        <div>Python</div>
+        <div>React</div>
+        <div>TensorFlow</div>
+        <!-- Add more skills here -->
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h1>Contact Me</h1>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>LinkedIn • GitHub • Twitter</p>
+    </section>
+  </main>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      themeToggle.textContent = next === 'dark' ? '🌞' : '🌙';
+    });
+
+    // Nav Toggle (mobile)
+    const navToggle = document.getElementById('nav-toggle');
+    const navbar   = document.getElementById('navbar');
+    navToggle.addEventListener('click', () => {
+      navbar.classList.toggle('open');
+    });
+
+    // Scroll-Reveal Animation
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.transition = 'all 0.6s ease-out';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    reveals.forEach(section => observer.observe(section));
+
+    // Smooth Scrolling
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href'))
+                .scrollIntoView({ behavior: 'smooth' });
+        if (navbar.classList.contains('open')) navbar.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

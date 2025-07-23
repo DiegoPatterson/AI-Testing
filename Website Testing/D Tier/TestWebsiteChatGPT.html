@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diego Patterson | Personal Resume</title>
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --accent: #64b5f6;
+      --bg: #f5f5f5;
+      --text: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 0.75rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 3rem 10%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-size: 2rem;
+    }
+
+    .project, .job, .ai {
+      background: white;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill {
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 2rem 5%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Diego Patterson</h1>
+    <p>Cybersecurity Student | AI Tinkerer | Developer</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#jobs">Jobs</a></li>
+      <li><a href="#ai">AI Tinkering</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a computer science student at California Baptist University, specializing in cybersecurity and digital forensics.
+      I’ve built computers, assisted in IT side businesses, and enjoy crafting clever code. Whether it's developing mobile apps
+      or poking around with AI models, I'm always learning and exploring new ideas.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>GoGo Maintenance</h3>
+      <p>An on-demand mechanic service app (like DoorDash for repairs). Built with Flutter, complete with live map, mechanic ratings, and job booking features.</p>
+    </div>
+    <div class="project">
+      <h3>Port Scanner</h3>
+      <p>A Python-based network tool to check open ports on target machines. Built for my cybersecurity class, inspired by Nmap.</p>
+    </div>
+  </section>
+
+  <section id="jobs">
+    <h2>Job Experience</h2>
+    <div class="job">
+      <h3>Cashier – Wanda's Provider Food Service</h3>
+      <p>Handled fast-paced service, managed orders, and supported kitchen staff when needed.</p>
+    </div>
+    <div class="job">
+      <h3>Bag Boy – Stater Bros.</h3>
+      <p>Developed time management and customer interaction skills in a busy retail environment.</p>
+    </div>
+  </section>
+
+  <section id="ai">
+    <h2>AI Tinkering</h2>
+    <div class="ai">
+      <h3>Bitburner Optimization</h3>
+      <p>Used scripting and AI-style logic to optimize game resource management in Bitburner.</p>
+    </div>
+    <div class="ai">
+      <h3>Transformer Study</h3>
+      <p>Currently diving into attention-based architectures to explore potential alternatives to dominant AI models.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span class="skill">C++</span>
+      <span class="skill">Flutter</span>
+      <span class="skill">Python</span>
+      <span class="skill">Networking</span>
+      <span class="skill">AI Model Analysis</span>
+      <span class="skill">Penetration Testing</span>
+      <span class="skill">Java</span>
+      <span class="skill">Git</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Your Email" required/>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Diego Patterson — Built with 💻 and ☕</p>
+  </footer>
+
+</body>
+</html>
